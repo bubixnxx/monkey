@@ -1,7 +1,3 @@
-(function(){ let a; function f(){ if(!a) a=Object.keys(GAME).find(z=> GAME[z] && GAME[z]['1_1']); return a; }
-    Object.defineProperty(GAME,'mapcell',{get: function(){ return GAME[f()]; }});
-})();
-
 GAME.emitOrder = (data) => GAME.socket.emit('ga',data);
 
 $('body').append('<div id="BOT_control" style="display:none;min-width:100px; padding:5px; border:solid gray 1px; background:rgba(22, 22, 93, 0.81); color:gold; position: fixed; top: 40px; right: 5px; z-index:5; text-align:center;"><div class="bt_button" style="cursor:pointer;text-align:center; border-bottom:solid gray 1px;">START</div><div id="select_born" class="pointer red" born="2">G</div><div id="select_born" class="pointer" born="3">U</div><div id="select_born" class="pointer" born="4">S</div><div id="select_born" class="pointer" born="5">H</div></div>');
@@ -28,6 +24,10 @@ $( "body" ).on( "click", "#select_born", function(){
 });
 
 BOT.Start = function(){
+    if (!GAME.mapcell) {
+        Object.defineProperty(GAME,'mapcell',{ get: () => { return GAME[Object.keys(GAME).find(z=> GAME[z] && GAME[z]['1_1'])]; } });
+    }
+
     BOT.LoadPVM();
 };
 
