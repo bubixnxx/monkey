@@ -1,6 +1,6 @@
 var caseNumber = 0;
 var wait = 5;
-var wait2 = 1; //chodzenie - default 54
+var wait2 = 2; //chodzenie - default 54
 var czekajpvp=308; //ile ma czekać jak spotka gracza na polu 
 var waiting1=2000;// czeka przy zmianie lokacji
 //-------czy ma schodzic na glebie i glebie rajskiej sali-----
