@@ -1,19 +1,3 @@
-var BOT = {
-    stop:true,
-    last_loc:0,
-    mapcell:false,
-    matrix:[],
-    steps:[],
-    steps_clone:[],
-    path:[],
-    processing:false,
-    mines:[],
-    last_mine:0,
-    speed:100,
-    mined_id:[],
-    refresh_mines:true
-}
-
 $('body').append('<div id="BOT_control" style="display:none; min-width:100px; padding:5px; border:solid gray 1px; background:rgba(22, 22, 93, 0.81); color:gold; position: fixed; top: 40px; right: 5px; z-index:5;"><div class="bt_button" style="cursor:pointer;text-align:center; border-bottom:solid gray 1px;">START</div><div class="bt_refresh" style="cursor:pointer;text-align:center; border-bottom:solid gray 1px;">ODŚWIEŻ</div><div class="bt_cool" style="text-align:center;"></div></div>');
 
 $('body').append('<div id="BOT_mines" style="display:none; min-width:100px; padding:5px; border:solid gray 1px; background:rgba(22, 22, 93, 0.81); color:gold; position: fixed; top: 120px; right: 5px; z-index:5;"></div>');
@@ -289,3 +273,7 @@ BOT.LoadES = function(){
     }
     document.head.append(esjs);
 }();
+
+console.clear();
+	console.log('%cSkrypt został poprawnie załadowany!','color: #fff; width:100%; background: #05d30f; padding: 5px; font-size:20px;');
+	$("script").last().remove();
