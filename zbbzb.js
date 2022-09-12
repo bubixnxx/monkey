@@ -187,7 +187,7 @@ BOT.Go = function(){
                     BOT.path.shift();
                     cur = [GAME.char_data.x, GAME.char_data.y];
                     if(!BOT.stop && BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)] && $("button[data-mid='"+BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)]+"']").length == 1 && BOT.steps.some(r => r.length == cur.length && r.every((value, index) => cur[index] == value))){
-                        setTimeout(function(){ BOT.Mine(); }, BOT.speed);
+                        setTimeout(function(){ BOT.Mine(); }, 1000);
                     }else if(!BOT.stop){
                         setTimeout(function(){ BOT.Move(); }, BOT.speed);
                     }
@@ -198,7 +198,7 @@ BOT.Go = function(){
         this.finder.calculate();
     }else if(!this.stop && (GAME.char_data.x+"_"+GAME.char_data.y) == this.last_mine){
         console.log("last one");
-        setTimeout(function(){ BOT.Mine(); }, this.speed);
+        setTimeout(function(){ BOT.Mine(); }, 1000);
         this.cdt = setTimeout(function(){
             GAME.loadMapJson(function(){ BOT.emitOrder({a:3,vo:GAME.map_options.vo},1); });
             setTimeout(function(){ BOT.Start(); }, 2000);
