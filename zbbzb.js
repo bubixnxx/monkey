@@ -186,11 +186,13 @@ BOT.Go = function(){
                 if(BOT.steps_clone.length > 0){
                     BOT.path.shift();
                     cur = [GAME.char_data.x, GAME.char_data.y];
-                    if(!BOT.stop && BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)] && $("button[data-mid='"+BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)]+"']").length == 1 && BOT.steps.some(r => r.length == cur.length && r.every((value, index) => cur[index] == value))){
-                        setTimeout(function(){ BOT.Mine(); }, 1000);
-                    }else if(!BOT.stop){
-                        setTimeout(function(){ BOT.Move(); }, BOT.speed);
-                    }
+                    setTimeout(()=> {
+                        if(!BOT.stop && BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)] && $("button[data-mid='"+BOT.mines[parseInt(GAME.char_data.x)+"_"+parseInt(GAME.char_data.y)]+"']").length == 1 && BOT.steps.some(r => r.length == cur.length && r.every((value, index) => cur[index] == value))){
+                            setTimeout(function(){ BOT.Mine(); }, BOT.speed);
+                        }else if(!BOT.stop){
+                            setTimeout(function(){ BOT.Move(); }, BOT.speed);
+                        }
+                    }, 1000);
                 }
             }
         });
