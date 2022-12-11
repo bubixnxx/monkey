@@ -408,7 +408,7 @@ y = $('#map_y').text();
 window.setTimeout(start,wait);
 }
 function check_players(){
-	$("button.more_players.poption").click()
+	$("button[data-option='load_more_players']").click();
 	if(0<document.getElementById("player_list_con").childElementCount){
 		y = $('#map_y').text();
 	if(document.getElementById("player_list_con").children[0].children[1].childElementCount==3 && y==2 && loc<6){
@@ -436,7 +436,7 @@ function check_players2(){
 	else {window.setTimeout(start,wait);}
 }
 function kill_players(){
-	$("button.more_players.poption").click()
+	$("button[data-option='load_more_players']").click();
 	var tabs=[300,320,280,305,290];
 	czekajpvp=tabs[Math.floor(Math.random()*tabs.length)]
 		if(licznik<document.getElementById("player_list_con").childElementCount){
