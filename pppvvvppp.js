@@ -133,7 +133,7 @@ function start(){
 			GAME.emitOrder({a:39,type:24,shorts:klanowe_lista});
 		}
 		kom_clear();
-	$("button.more_players.poption").click();
+		$("button[data-option='load_more_players']").click();
 	
 	if(!GAME.is_loading){
 	if(czy_sa_wojny()){
