@@ -12,7 +12,7 @@ var jestemimperatorem=((GAME.char_data.empire === 1) ? true : false);   //Imperi
 var jestemdemonem=((GAME.char_data.empire === 3) ? true : false);      //Imperium Demonów Mrozu
 //--------------wypowiadanie wojen------------------
 var adimp=false;  //zaznacz true jeśli pełnisz funkcję imperatora lub admirała swojego imperium
-var klanowe_lista = GAME.server == 18 ? "lego;Domin;las;jad;Legion" : GAME.server == 12 ? "noob;BipBip;seven;PEDO;SOL;trans" : GAME.server == 16 ? "TAKA;ccc;LALA;AFK;LOL" : false;
+var klanowe_lista = GAME.server == 18 ? "lego;Domin;las;jad;Legion" : GAME.server == 12 ? "noob;BipBip;seven;PEDO;SOL;trans;demo;omed" : GAME.server == 16 ? "TAKA;ccc;LALA;AFK;LOL" : false;
 var ile_wojen = klanowe_lista ? klanowe_lista.split(";").length : 0;
 //==================================================================================================
 var tabelka=[1,2,3,4];
